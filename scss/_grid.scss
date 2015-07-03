@@ -1,0 +1,71 @@
+// grid variables
+$grid-columns: 12;
+$grid-max-width: 65em;
+ 
+ // breakpoints
+$breakpoint-small: "only screen and (min-width: 20em)";
+$breakpoint-medium: "only screen and (min-width: 30em)";
+
+%clearfix {
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+    }
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important; 
+ }
+.wrapper {
+    width: 100%;
+    margin: 5% auto;
+}
+.row {
+    max-width: 750px;
+    margin:auto;
+    text-align: center;
+}
+.wrapper:after,
+.row:after {
+      content: "";
+      display: table;
+      clear: both; 
+      }
+
+[class*='column-'] {
+    float: left;
+    padding: 1em;
+    width: 100%;
+    min-height: 1px; 
+    }
+
+
+@media #{$breakpoint-medium} {
+    .wrapper {
+        width: 95%;
+        max-width: $grid-max-width;
+        }
+         
+    @for $i from 1 through $grid-columns {
+    .column-#{$i} { 
+       width: 100% / 12 * $i;
+        }
+      }
+}

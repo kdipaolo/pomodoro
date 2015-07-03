@@ -1,0 +1,14 @@
+$darkred: #C54134;
+$red: #E84C3D;
+$lightred: #FF9187;
+$lightgray: #C7C7C7;
+$gray: #A8A8A8;
+$darkgray: #808080;
+$white: #fff;
+$green: #00DD78;
+
+
+@mixin transition {
+  transition: 0.3s all ease;
+}
+
